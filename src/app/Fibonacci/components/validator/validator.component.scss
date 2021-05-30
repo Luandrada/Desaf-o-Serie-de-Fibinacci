@@ -1,0 +1,110 @@
+$color-naranja: #ff6600;
+$color-gris: #ededed;
+$fte-ppal:'Mulish', sans-serif;
+$fte-sec:'Shadows Into Light', cursive;
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button{
+    appearance: none;
+    margin: 0;
+}
+
+.bg{
+    background-color: $color-gris;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    .juego{
+        width: 30vw;
+        min-width: 280px;
+        margin-top: -50px;
+        h1{
+            font-family: $fte-ppal;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            color: $color-naranja;
+        }
+        p{
+            font-family: $fte-ppal;
+            font-size: 15px;
+            color: rgb(48, 45, 45);
+        }
+        .form-control{
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.822);
+        }
+        span{
+            color: red;
+            font-size: 11px;
+            font-family: $fte-ppal;
+            display: block;
+            margin-top: 2px;
+            padding-left: 3px;
+        }
+        .btn{
+            margin-top: 30px;
+            background-color: $color-naranja;
+            font-family: $fte-ppal;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 20px;
+            width:100%;
+            &:hover{
+                box-shadow: 2px 3px 2px #f78b4393;
+            }
+        }
+    }
+    .modal-true{
+        position: absolute;
+        z-index: 5;
+        width: 30vw;
+        height: 400px;
+        min-width: 290px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 7px;
+        box-shadow: 2px 2px 4px grey;
+        padding: 20px 25px;
+        .close{
+            position: relative;
+            height: 35px;
+            .fa-times{
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                color: $color-naranja;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            border-bottom: 2px solid $color-gris;
+        }
+        .contenido{
+            margin-top: 35px;
+            .fa-laugh-beam,.fa-sad-cry {
+                color: $color-naranja;
+                font-size: 9em;
+                margin-bottom: 30px;
+            }
+            h3{
+                font-family: $fte-sec;
+                color: $color-naranja;
+                letter-spacing: 1px;
+                font-size: 30px;
+                margin-bottom: 15px;
+            }
+            p{
+                font-family: $fte-ppal;
+                color: rgb(48, 45, 45);
+            }
+            &:hover{
+                cursor: default;
+            }
+        }
+    }
+    .zocalo{
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+    }
+  
+}

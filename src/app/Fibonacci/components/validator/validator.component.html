@@ -1,0 +1,41 @@
+
+<section class=" bg d-flex justify-content-center align-items-center" >
+    <div class="juego">
+        <h1>Juguemos un rato </h1>
+        <p>Porfavor, ingrese un número del 1 al 10.000.<br> Usted acertará si su número pertenece a la serie de Fibonacci.</p>
+        <form action="" [formGroup]="formNumero" (ngSubmit)="verificarNumero()">
+            <input class="form-control " formControlName="number"  type="number" placeholder="Ingrese su número" >
+            <span *ngIf="msjeCampoObligatorio">Ingrese un número entre 1 y 10.000</span>
+            <button class="btn " type="submit">Verificar</button>
+        </form>
+    </div>
+
+
+    <!-- Modal resultado correcto  -->
+    <div class="modal-true"  *ngIf="mostrarModal && resultado ">
+        <div class="close">
+            <i class="fas fa-times" (click)="cerrarModal()"></i>
+        </div>
+        <div class="contenido d-flex justify-content-center align-items-center flex-column">
+            <i class="far fa-laugh-beam"></i>
+            <h3>¡Acertaste!</h3>
+            <p>Tu numero pertenece a la serie de Fibonacci.</p>
+        </div>
+    </div>
+
+    
+    <!-- Modal resultado incorrecto  -->
+    <div class="modal-true"  *ngIf="mostrarModal &&  !resultado">
+        <div class="close">
+            <i class="fas fa-times" (click)="cerrarModal()"></i>
+        </div>
+        <div class="contenido d-flex justify-content-center align-items-center flex-column">
+            <i class="far fa-sad-cry"></i>
+            <h3>¡Inténtalo nuevamente!</h3>
+            <p>Tu numero no pertenece a la serie de Fibonacci.</p>
+        </div>
+    </div>
+
+    <!-- Zocalo de fondo -->
+    <img src="../../../../assets/images/Zócalo.png" class="zocalo" alt="">
+</section>
