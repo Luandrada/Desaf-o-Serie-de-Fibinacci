@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ValidatorService } from '../../services/validator.service';
 @Component({
   selector: 'app-validator',
   templateUrl: './validator.component.html',
@@ -12,7 +13,7 @@ export class ValidatorComponent implements OnInit {
   formNumero: FormGroup;
   numeroCargado:number;
   msjeCampoObligatorio:boolean=false;
-  constructor(private renderer : Renderer2,
+  constructor(private _validatorService:ValidatorService,
               private fb: FormBuilder,) {
 
     this.formNumero=new FormGroup({});
@@ -36,16 +37,16 @@ export class ValidatorComponent implements OnInit {
       return this.formNumero.markAllAsTouched();
     }else{
       this.numeroCargado=this.formNumero.controls.number.value;
-      if (this.numeroCargado >= 1 && this.numeroCargado <= 10000) {
-        this.msjeCampoObligatorio=false;
-        //aca llamo al servicio enviandole el numero
+      this.msjeCampoObligatorio=false;
 
-      }else{
-        this.msjeCampoObligatorio=true;
-      }
+      this.resultado=this._validatorService.fibonacci(this.numeroCargado);
+      this.mostrarModal = true;
+
+      this.formNumero.reset()
   
     }
   }
+ 
 
   cerrarModal(){
     this.mostrarModal = false

@@ -28,6 +28,11 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
             font-family: $fte-ppal;
             font-size: 15px;
             color: rgb(48, 45, 45);
+            a{
+                text-decoration: none;
+                color: rgb(167, 164, 164);
+                font-size: 13px;
+            }
         }
         .form-control{
             width: 100%;
@@ -107,4 +112,17 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
         bottom: 0px;
     }
   
+}
+
+@media screen and (max-width: 767px) {
+    .bg{
+        .modal-true{
+            .contenido{
+                h3{
+                    font-size: 27px;
+                }
+            }
+        }
+    }
+        
 }

@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ValidatorComponent } from './Fibonacci/components/validator/validator.component';
 
+
+import { ValidatorService } from './Fibonacci/services/validator.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +22,9 @@ import { ValidatorComponent } from './Fibonacci/components/validator/validator.c
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    ValidatorService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
